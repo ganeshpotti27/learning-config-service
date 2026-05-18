@@ -9,12 +9,13 @@ spring:
           uri: https://github.com/${GITHUB_USER_NAME}/${GITHUB_REPO_NAME}
           username: ${GITHUB_USER_NAME}
           password: ${GITHUB_PASSWORD}
-          default: main
+          default-label: main
 
 server:
   port: 8888
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
